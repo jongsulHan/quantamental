@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.env
+venv/
+.pytest_cache/
+
+# C++ Build Artifacts
+build/
+bin/
+lib/
+*.o
+*.so
+*.dylib
+*.dll
+
+# OS
+.DS_Store
