@@ -12,17 +12,17 @@ namespace quantamental {
 
 class BloomFilter {
 
-struct BloomFilterStats {
-    uint64_t num_insertions;
-    uint64_t num_queries;
-    uint64_t bit_array_size;
-    uint64_t bits_set;
-    uint32_t num_hash_functions;
-    double fill_ratio;
-    double estimated_fpr;
-};
-
 public:
+    struct BloomFilterStats {
+        uint64_t num_insertions;
+        uint64_t num_queries;
+        uint64_t bit_array_size;
+        uint64_t bits_set;
+        uint32_t num_hash_functions;
+        double fill_ratio;
+        double estimated_fpr;
+    };
+
     // Constructors
     BloomFilter(size_t expected_elements, double false_positive_rate = 0.01);
     BloomFilter(size_t num_bits, uint32_t num_hashes);  // For testing
