@@ -59,7 +59,7 @@ private:
     size_t num_words_;                        // Number of 64-bit words
     uint32_t num_hashes_;                     // Hash functions (k)
     uint64_t num_insertions_;                 // Counter
-    uint64_t num_queries_;                    // Counter
+    mutable uint64_t num_queries_;                    // Counter
 
     // Private methods
     std::vector<size_t> compute_hashes(const void* data, size_t len) const;
