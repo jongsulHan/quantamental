@@ -1,3 +1,5 @@
+#"/home/hanege/miniconda3/envs/quant_sys/include/python3.11",
+#"/home/hanege/miniconda3/envs/quant_sys/lib/python3.11/site-packages/pybind11/include",
 cmake_minimum_required(VERSION 3.15)
 project(quantamental LANGUAGES CXX)
 
@@ -26,7 +28,7 @@ pybind11_add_module(quantamental src/bindings.cpp)
 target_link_libraries(quantamental PRIVATE bloom_filter_lib)
 
 # Install the Python module to the source tree for development
-set(PYTHON_MODULE_INSTALL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../src")
+set(PYTHON_MODULE_INSTALL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/..")
 install(TARGETS quantamental DESTINATION ${PYTHON_MODULE_INSTALL_DIR})
 
 # Testing (optional)

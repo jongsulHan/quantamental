@@ -109,9 +109,10 @@ class DataFetcher:
                 ticker = tickers[0]
                 if not data.empty:
                     result[ticker] = data
-                    logger.into(f"{ticker}: Successfully fetched {len(data)} rows")
+                    logger.info(f"{ticker}: Successfully fetched {len(data)} rows")
                 else:
                     logger.warning(f"{ticker}: No data returned")
+                return result
             else:
                 # Handle multiple tickers
                 for ticker in tickers:
@@ -120,7 +121,7 @@ class DataFetcher:
                         ticker_data = data[ticker]
 
                         # Check if data is valid
-                        if not ticker_data.empty and not ticker_data.isna().all.all():
+                        if not ticker_data.empty and not ticker_data.isna().all().all():
                             result[ticker] = ticker_data
                             logger.info(f"{ticker}: Successfully fetched {len(ticker_data)} rows")
                         else:

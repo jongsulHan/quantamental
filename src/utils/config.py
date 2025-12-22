@@ -29,10 +29,10 @@ def find_project_root() -> Path:
         if (parent / '.git').exists() or (parent / 'configs').exists():
             return parent
         
-        # If we've checked all parents and found nothing, raise an error
-        raise FileNotFoundError(
-            "Could not find project root. Looking for .git/ or configs/ folder."
-        )
+    # If we've checked all parents and found nothing, raise an error
+    raise FileNotFoundError(
+        "Could not find project root. Looking for .git/ or configs/ folder."
+    )
     
 def get_project_root() -> Path:
     """

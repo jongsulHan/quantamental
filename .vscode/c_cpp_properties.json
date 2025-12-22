@@ -1,11 +1,12 @@
 {
     "configurations": [
-        {
+        {   
+            
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/home/hanege/miniconda3/envs/quant_sys/include/python3.11",
-                "/home/hanege/miniconda3/envs/quant_sys/lib/python3.11/site-packages/pybind11/include"
+                "/home/hanege/anaconda3/envs/quant_sys/include/python3.11",
+                "/home/hanege/anaconda3/envs/quant_sys/lib/python3.11/site-packages/pybind11/include"
             ],
             "defines": [],
             "cStandard": "c17",
