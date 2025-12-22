@@ -12,7 +12,7 @@ namespace quantamental {
 
     size_t BloomFilter::optimal_num_bits(size_t n, double p) {
         return static_cast<size_t>(std::ceil(-static_cast<double>(n) * std::log(p) /
-                                             std::log(2.0) * std::log(2.0)));
+                                             (std::log(2.0) * std::log(2.0))));
     }
 
     uint32_t BloomFilter::optimal_num_hashes(size_t m, size_t n) {
@@ -55,13 +55,13 @@ namespace quantamental {
     bool BloomFilter::test_bit(size_t index) const {
         size_t word_index = index / 64;
         size_t bit_index = index % 64;
-        return (bit_array_[word_index] & (1ULL << bit_index) != 0);
+        return ((bit_array_[word_index] & (1ULL << bit_index)) != 0);
     }
 
     uint64_t BloomFilter::count_set_bits() const {
         uint64_t count = 0;
         for (size_t i = 0; i < num_words_; ++i) {
-            count += std::__popcount(bit_array_[i]);
+            count += std::popcount(bit_array_[i]);
 
         }
         return count;

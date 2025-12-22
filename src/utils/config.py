@@ -24,7 +24,7 @@ def find_project_root() -> Path:
     # Start from the current file's location
     current_path = Path(__file__).resolve()
 
-    for parent in [current_path + list(current_path.parent)]:
+    for parent in [current_path] + list(current_path.parents):
         # Check if this directory contains .git/ or configs/
         if (parent / '.git').exists() or (parent / 'configs').exists():
             return parent
