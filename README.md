@@ -439,15 +439,12 @@ This is a portfolio project, but suggestions are welcome. Please open an issue f
 
 ## License
 
-MIT License
-
 ---
 
 ## Author
 
 **Jongsul Han**  
 Computer Science @ Technical University of Munich (TUM)  
-Target: ML Systems Engineer positions at Nvidia, ARM, Quantitative Firms
 
 ---
 
